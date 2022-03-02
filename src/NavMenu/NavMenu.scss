@@ -1,0 +1,22 @@
+@import '../base/vars';
+
+.nav-menu {
+  &__list {
+    @media (min-width: 1025px) {
+      display: flex;
+    }
+  }
+
+  &__item {}
+
+  &__link {
+
+    transition: 0.3s color;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
