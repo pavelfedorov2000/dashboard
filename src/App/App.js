@@ -15,6 +15,7 @@ function App(props) {
         <Route path='/home' component={Home} />
         <Route path='/comments' component={Comments} />
         <Route path='/extensions' component={Extensions} />
+        <Route path='/not-found' component={NotFound} />
         <Redirect from='/' to='/home' />
       </Switch>
     </div>
