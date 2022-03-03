@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 import './base/_general.scss';
-import App from './App'
+import AppMain from './AppMain/AppMain';
 
 ReactDOM.render((
   <Router>
-    <App />
+    <AppMain />
   </Router>
 ), document.getElementById('root')
 );

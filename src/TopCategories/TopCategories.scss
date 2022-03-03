@@ -1,0 +1,80 @@
+@import '../base/vars';
+
+.top-categories {
+  background-color: #FFF;
+  border-radius: vw(10);
+  padding: vw(20);
+
+  &__title {
+    font-size: vw(16);
+    line-height: 19 / 16 * 100%;
+    letter-spacing: -0.4px;
+
+    &:not(:last-child) {
+      margin-bottom: vw(4);
+    }
+  }
+
+  &__nums {
+    font-weight: 500;
+    font-size: vw(12);
+    line-height: 14 / 12 * 100%;
+    letter-spacing: -0.4px;
+    color: #B9B9B9;
+
+    &:not(:last-child) {
+      margin-bottom: vw(10);
+    }
+  }
+}
+
+.top-category {
+  @extend %flex-row;
+  padding: vw(10) 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  &__title {
+    @extend %text-12;
+  }
+
+  &__subtitle {
+    @extend %text-12;
+    color: #B9B9B9;
+  }
+
+  &__left {
+    padding-right: vw(10);
+
+    >* {
+      &:not(:last-child) {
+        margin-bottom: vw(4);
+      }
+    }
+  }
+
+  &__right {
+    @extend %flex-col;
+    align-items: flex-end;
+
+    >* {
+      &:not(:last-child) {
+        margin-bottom: vw(2);
+      }
+    }
+  }
+
+  &__k {
+    @extend %text-10;
+    font-weight: 600;
+  }
+
+  &__plus {
+    padding: vw(2) vw(4);
+    @extend %text-10;
+    font-weight: 500;
+    border-radius: vw(3);
+  }
+}

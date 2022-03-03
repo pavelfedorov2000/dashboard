@@ -1,10 +1,23 @@
 @import '../base/vars';
 
 .logo {
-  display: flex;
-  align-items: center;
 
   &__img {
+    width: 139 * 100vh / 1150;
+    height: 52 * 100vh / 1150;
     flex-shrink: 0;
+  }
+}
+
+.sidebar-toggler {
+  transition: .3s transform;
+
+  &.active {
+    transform: rotate(180deg);
+  }
+
+  svg {
+    width: vw(24);
+    height: vw(24);
   }
 }

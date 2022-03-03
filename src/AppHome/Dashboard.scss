@@ -1,0 +1,36 @@
+@import '../base/vars';
+
+.dashboard {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: max-content vw(256) vw(94) max-content;
+    grid-template-areas:
+      "stats stats stats stats"
+      "chart chart chart customers"
+      "chart chart chart categories"
+      "table table table categories"
+    ;
+    grid-gap: vw(20);
+  }
+
+  &__stats {
+    grid-area: stats;
+  }
+
+  &__chart {
+    grid-area: chart;
+
+    img {
+      @extend %cover;
+    }
+  }
+
+  &__customers {
+    grid-area: customers;
+  }
+
+  &__categories {
+    grid-area: categories;
+  }
+}

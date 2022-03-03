@@ -1,1 +1,79 @@
 @import '../base/vars';
+
+.header {
+  padding: vw(20);
+  background-color: #fff;
+
+  &__inner {
+    @extend %flex-row-center;
+  }
+
+  &__search {
+    width: vw(270);
+    height: vw(40);
+    padding: 0 vw(8) 0 vw(42);
+    background-size: vw(24) vw(24);
+    background-position-x: vw(8);
+    background-repeat: no-repeat;
+  }
+
+  &__actions {
+    display: flex;
+
+    >* {
+      &:not(:last-child) {
+        margin-right: vw(15);
+      }
+    }
+  }
+}
+
+.theme-toggler,
+.notifications {
+  background-color: #EFF0F6;
+  @extend %flex-center;
+
+  img {
+    width: vw(24);
+    height: vw(24);
+  }
+}
+
+.notifications {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: vw(8);
+    right: vw(10);
+    width: vw(10);
+    height: vw(10);
+    border-radius: 50%;
+    background-color: #F26464;
+    border: 1px solid #FFFFFF;
+  }
+}
+
+.theme-toggler,
+.notifications,
+.user-avatar {
+  width: vw(40);
+  height: vw(40);
+  border-radius: 50%;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lang {
+  width: vw(50);
+  color: #767676;
+  font-weight: 500;
+  font-size: vw(16);
+  line-height: 19 / 16 * 100%;
+  text-transform: uppercase;
+}

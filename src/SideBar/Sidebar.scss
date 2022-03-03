@@ -1,0 +1,19 @@
+@import '../base/vars';
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: vw(253);
+  height: 100vh;
+  background-color: $blue;
+  padding: 20 * 100vh / 1150 vw(20);
+  @extend %flex-col;
+  overflow-y: auto;
+
+  &__top {
+    @extend %flex-row-center;
+    padding: vw(20) 0;
+    border-bottom: vw(1) solid rgba(#FFF, .1);
+  }
+}

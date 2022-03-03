@@ -1,0 +1,35 @@
+@import '../base/vars';
+
+.manager {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: vw(10);
+  padding: vw(10);
+  display: grid;
+  grid-template-columns: vw(48) max-content;
+  grid-template-rows: repeat(2, max-content);
+  grid-gap: 0 vw(8);
+  margin-top: auto;
+
+  &__img {
+    grid-row: span 2;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    line-height: 34 / 14 * 100%;
+    letter-spacing: vw(0.75);
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__position {
+    font-weight: 500;
+    font-size: vw(10);
+    line-height: 15 / 10 * 100%;
+    letter-spacing: vw(0.859533);
+    color: rgba(255, 255, 255, 0.5);
+    grid-column: 2 / 3;
+  }
+}

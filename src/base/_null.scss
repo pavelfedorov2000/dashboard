@@ -16,11 +16,14 @@ body {
   padding: 0;
   overflow-x: hidden;
   min-width: 320px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter',
+    sans-serif;
   font-style: normal;
   font-weight: 400;
-  background-color: $black;
-  color: #fff;
+  font-size: vw(14);
+  line-height: 17 / 14 * 100%;
+  background-color: #F0F2FA;
+  color: #171717;
 
   &._locked {
     overflow-y: hidden;
@@ -67,7 +70,9 @@ a {
 }
 
 button,
-input {
+input,
+select {
+  background-color: transparent;
   border: none;
   outline: none;
   padding: 0;

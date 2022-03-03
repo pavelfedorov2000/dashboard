@@ -1,0 +1,44 @@
+@import '../base/vars';
+
+.not-found {
+  @extend %flex-col-center;
+  text-align: center;
+
+  &__img {
+    width: vw(644);
+    height: vw(350);
+    object-fit: cover;
+
+    &:not(:last-child) {
+      margin-bottom: vw(90);
+    }
+  }
+
+  &__title {
+    font-size: vw(32);
+    line-height: 34 / 32 * 100%;
+    font-weight: 700;
+    letter-spacing: vw(1);
+
+    &:not(:last-child) {
+      margin-bottom: vw(20);
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    line-height: 17 / 14 * 100%;
+    color: #767676;
+
+    &:not(:last-child) {
+      margin-bottom: vw(30);
+    }
+  }
+
+  &__btn {
+    padding: vw(10) vw(45);
+    border-radius: vw(4);
+    font-size: vw(16);
+    line-height: 24 / 16 * 100%;
+  }
+}

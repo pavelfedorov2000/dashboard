@@ -14,8 +14,9 @@ function AppHeader() {
         <div className="header__actions actions-header">
           <select className="lang">
             <option>en</option>
+            <option>ru</option>
           </select>
-          <button className="actions-header__item" type="button">
+          <button className="actions-header__item theme-toggler" type="button">
             <img src="img/icons/theme.svg" alt="theme" />
           </button>
           <button className="actions-header__item notifications" type="button">
