@@ -1,0 +1,92 @@
+@import '../base/vars';
+
+.chart {
+  background-color: #FFF;
+  box-shadow: 0px 15px 50px rgba(160, 163, 189, 0.1);
+  border-radius: vw(10);
+  padding: vw(20) vw(25) vw(20) vw(20);
+
+  >* {
+    &:not(:last-child) {
+      margin-bottom: vw(25);
+    }
+  }
+
+  &__title {
+    @extend %text-16;
+  }
+
+  &__monthes {
+    letter-spacing: -0.5px;
+    color: #B9B9B9;
+  }
+
+  &__info {
+    @extend %flex-row;
+  }
+
+  &__descr {
+    >* {
+      &:not(:last-child) {
+        margin-bottom: vw(8);
+      }
+    }
+  }
+
+  &__graph {
+    width: 100%;
+  }
+}
+
+.chart-legend {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: vw(24);
+
+  &__item {
+
+    position: relative;
+    padding-left: vw(16);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: vw(4);
+      left: 0;
+      width: vw(8);
+      height: vw(8);
+      border-radius: 50%;
+    }
+
+    >* {
+      &:not(:last-child) {
+        margin-bottom: vw(8);
+      }
+    }
+
+    &--purple {
+      &:before {
+        background-color: #5F2EEA;
+      }
+    }
+
+    &--green {
+      &:before {
+        background-color: #4BDE97;
+      }
+    }
+  }
+
+  &__item-title {
+    font-size: vw(12);
+    line-height: 17 / 12 * 100%;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #B9B9B9;
+  }
+
+  &__item-num {
+    @extend %text-16;
+    font-weight: 600;
+  }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import Stats from '../Stats/Stats';
+import Chart from '../Chart/Chart';
 import NewCustomers from '../NewCustomers/NewCustomers';
+import DashboardTable from '../DashboardTable/DashboardTable';
 import TopCategories from '../TopCategories/TopCategories';
 import './Dashboard.scss';
 
@@ -10,10 +12,9 @@ function AppHome(props) {
       <h1>Dashboard</h1>
       <div className="dashboard__grid">
         <Stats />
-        <div className="chart dashboard__chart">
-          <img src="img/chart.svg" alt="chart" />
-        </div>
+        <Chart />
         <NewCustomers />
+        <DashboardTable />
         <TopCategories />
       </div>
     </div>

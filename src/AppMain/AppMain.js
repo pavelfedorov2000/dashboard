@@ -10,7 +10,7 @@ import SideBar from '../SideBar/SideBar';
 import Footer from '../Footer/Footer';
 import AppHome from '../AppHome/AppHome';
 import Comments from '../Comments/Comments';
-import Extensions from '../Extensions/Extensions';
+import Extentions from '../Extentions/Extentions';
 import NotFound from '../NotFound/NotFound';
 
 
@@ -25,7 +25,7 @@ function AppMain(props) {
           <Switch>
             <Route exact path="/" component={AppHome} />
             <Route path='/comments' component={Comments} />
-            <Route path='/extensions' component={Extensions} />
+            <Route path='/extentions' component={Extentions} />
             <Route path='/not-found' component={NotFound} />
           </Switch>
         </main>

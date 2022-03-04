@@ -27,9 +27,11 @@
 }
 
 .btn {
-  background-color: $blue;
+  background-color: #2F49D1;
   text-align: center;
   color: #fff;
+  border-radius: vw(4);
+  transition: .3s all;
 }
 
 h1 {

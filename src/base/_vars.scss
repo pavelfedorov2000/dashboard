@@ -72,6 +72,12 @@ $blue: #0061F7;
   letter-spacing: -0.4px;
 }
 
+%text-16 {
+  font-size: vw(16);
+  line-height: 19 / 16 * 100%;
+  letter-spacing: -0.4px;
+}
+
 %text-18 {
   font-size: vw(18);
   line-height: 22 / 18 * 100%;

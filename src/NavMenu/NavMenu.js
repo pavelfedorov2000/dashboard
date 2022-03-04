@@ -4,9 +4,7 @@ import { Link } from "react-router-dom"
 import './NavMenu.scss';
 
 function NavMenu() {
-  const links = [
-    'dashboard', 'posts', 'categories', 'media', 'pages', 'comments', 'appearance', 'extentions', 'users', 'settings',
-  ];
+  const links = ['dashboard', 'posts', 'categories', 'media', 'pages', 'comments', 'appearance', 'extentions', 'users', 'settings'];
 
 
   const [activeLink, setLink] = useState(false);
