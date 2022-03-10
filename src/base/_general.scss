@@ -5,20 +5,17 @@
 .wrapper {
   position: relative;
   overflow-x: hidden;
-  /* display: grid;
-  grid-template-columns: minmax(vw(253), 25%) 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "sidebar header"
-    "sidebar main"
-    "sidebar footer"
-  ; */
 }
 
 .page {
   @extend %flex-col;
   min-height: 100vh;
   padding-left: vw(253);
+  transition: .5s padding;
+
+  &--wider {
+    padding-left: vw(5);
+  }
 }
 
 .main {
@@ -38,4 +35,16 @@ h1 {
   font-size: vw(24);
   line-height: 34 / 24 * 100%;
   font-weight: 700;
+}
+
+.search-input {
+  @extend %vertical-align;
+  background-color: #EFF0F6;
+  background-size: vw(24) vw(24);
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+
+  &::placeholder {
+    color: #D6D7E3;
+  }
 }

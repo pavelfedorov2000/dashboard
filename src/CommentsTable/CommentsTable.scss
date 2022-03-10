@@ -1,0 +1,140 @@
+@import '../base/vars';
+
+.comments {
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: vw(40);
+    }
+  }
+
+  &__table-filters {
+    @extend %flex-row;
+    padding: vw(20);
+    background-color: #FFF;
+    box-shadow: 0px 1px 0px #DADBE4;
+  }
+
+  &__table-selects {
+    width: vw(185 * 2 + 20);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: vw(20);
+    display: none;
+  }
+
+  &__table-select {
+    @extend %vertical-align;
+    width: vw(185);
+    height: vw(44);
+    padding: 0 vw(20);
+    border: vw(2) solid #EEE;
+    border-radius: vw(4);
+    font-size: vw(16);
+    line-height: 24 / 16 * 100%;
+    color: #9b9b9b;
+    background-size: vw(24) vw(24);
+    background-position: calc(100% - 20 * 100vw / 1440) 50%;
+  }
+}
+
+.table-select {
+  @extend %vertical-align;
+  width: vw(185);
+  height: vw(44);
+  background-color: #fff;
+  padding: 0 vw(20);
+  border: vw(2) solid #EEE;
+  border-radius: vw(4);
+  font-size: vw(16);
+  line-height: 24 / 16 * 100%;
+  color: #9b9b9b;
+  background-size: vw(24) vw(24);
+  background-position: calc(100% - 20 * 100vw / 1440) 50%;
+}
+
+.sr-only {
+  display: none;
+}
+
+.form-control {
+  @extend %vertical-align;
+  width: vw(266);
+  height: vw(44);
+  background-position: calc(100% - 16 * 100vw / 1440) 50%;
+  background-color: #EFF0F6;
+  background-size: vw(24) vw(24);
+  background-repeat: no-repeat;
+  padding-left: vw(16);
+  padding-right: vw(55);
+  font-size: vw(14);
+  line-height: 34 / 14 * 100%;
+  border-radius: vw(8);
+
+  &::placeholder {
+    color: #D6D7E3;
+  }
+}
+
+.react-bootstrap-table-pagination {
+  padding-top: vw(20);
+}
+
+.react-bs-table-sizePerPage-dropdown {
+  display: none;
+}
+
+.react-bootstrap-table-pagination-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination {
+  @extend %vertical-align;
+}
+
+.page-item {
+  width: vw(32);
+  height: vw(32);
+  margin: 0 vw(2);
+
+  &[title="first page"],
+  &[title="last page"] {
+    display: none;
+  }
+
+  &[title="previous page"],
+  &[title="next page"] {
+    width: vw(46);
+    height: vw(44);
+    background-color: #2F49D1;
+    border-radius: vw(4);
+
+    &.disabled {
+      background-color: rgba(47, 73, 209, 0.1);
+    }
+
+    .page-link {
+      color: #fff;
+    }
+  }
+
+  &[title="next page"] {
+    margin-left: vw(14);
+  }
+
+  &[title="previous page"] {
+    margin-right: vw(14);
+  }
+}
+
+.page-link {
+  @extend %flex-center;
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  font-size: vw(14);
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #000;
+}

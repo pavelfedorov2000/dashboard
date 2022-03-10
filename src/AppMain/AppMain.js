@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useState } from 'react';
 import {
   Route,
   Switch,
@@ -16,9 +17,15 @@ import NotFound from '../NotFound/NotFound';
 
 function AppMain(props) {
 
+  const [sidebar, setSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+  }
+
   return (
     <div className="wrapper">
-      <SideBar />
+      <SideBar sidebar={sidebar} toggleSidebar={toggleSidebar} />
       <div className="page">
         <AppHeader />
         <main className="main">

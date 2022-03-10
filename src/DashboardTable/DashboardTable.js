@@ -4,50 +4,50 @@ import BootstrapTable from 'react-bootstrap-table-next';
 
 const dashboardTableData = [
   {
-    "id": 0,
-    "title": "Any mechanical keyboard enthusiasts in design?",
-    "author": "Eleanor Pena",
-    "status": "Pending",
-    "date": "18.05.2020"
+    id: 0,
+    title: "Any mechanical keyboard enthusiasts in design?",
+    author: "Eleanor Pena",
+    status: "Pending",
+    date: "18.05.2020"
   },
   {
-    "id": 1,
-    "title": "17 Iconic Movies That Got Surprisingly Low Ratings",
-    "author": "Courtney Henry",
-    "status": "Pending",
-    "date": "27.11.2019"
+    id: 1,
+    title: "17 Iconic Movies That Got Surprisingly Low Ratings",
+    author: "Courtney Henry",
+    status: "Pending",
+    date: "27.11.2019"
   },
   {
-    "id": 2,
-    "title": "The Fun Side of Hitting Reset",
-    "author": "Jacob Jones",
-    "status": "Active",
-    "date": "04.11.2019"
+    id: 2,
+    title: "The Fun Side of Hitting Reset",
+    author: "Jacob Jones",
+    status: "Active",
+    date: "04.11.2019"
   },
   {
-    "id": 3,
-    "title": "U.S. Chemical Production Improves In July",
-    "author": "Brooklyn Simmons",
-    "status": "Active",
-    "date": "08.07.2020"
+    id: 3,
+    title: "U.S. Chemical Production Improves In July",
+    author: "Brooklyn Simmons",
+    status: "Active",
+    date: "08.07.2020"
   },
   {
-    "id": 4,
-    "title": "Chemical Activity Barometer Shows Gain In August",
-    "author": "Darrell Steward",
-    "status": "Active",
-    "date": "10.04.2020"
+    id: 4,
+    title: "Chemical Activity Barometer Shows Gain In August",
+    author: "Darrell Steward",
+    status: "Active",
+    date: "10.04.2020"
   }
 ];
 
 const statusStyle = {
   "Pending": {
-    "backgroundColor": "rgba(255, 172, 50, 0.1)",
-    "color": "#FFB648",
+    backgroundColor: "rgba(255, 172, 50, 0.1)",
+    color: "#FFB648",
   },
   "Active": {
-    "backgroundColor": "rgba(88, 135, 255, 0.1)",
-    "color": "#5887FF",
+    backgroundColor: "rgba(88, 135, 255, 0.1)",
+    color: "#5887FF",
   },
 };
 
@@ -75,7 +75,7 @@ function authorFormatter(cell, row, rowIndex, colIndex) {
 
 function statusFormatter(cell, row, rowIndex, colIndex) {
   return (
-    <span className="status-label" style={{ backgroundColor: statusStyle[cell]["backgroundColor"], color: statusStyle[cell]["color"] }}>{cell}</span>
+    <span className="status-label" style={{ backgroundColor: statusStyle[cell].backgroundColor, color: statusStyle[cell].color }}>{cell}</span>
   );
 }
 
@@ -115,7 +115,7 @@ const rowStyle = { backgroundColor: '#fff' };
 function DashboardTable() {
 
   return (
-    <section className="dashboard-table dashboard__table">
+    <section className="table dashboard__table">
       <BootstrapTable keyField='id' data={dashboardTableData} columns={columns} selectRow={selectRow} headerClasses="dashboard-table__head" rowStyle={rowStyle} />
     </section>
   );

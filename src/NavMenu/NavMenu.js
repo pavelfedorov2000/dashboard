@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Link } from "react-router-dom"
 import './NavMenu.scss';
 
-function NavMenu() {
-  const links = ['dashboard', 'posts', 'categories', 'media', 'pages', 'comments', 'appearance', 'extentions', 'users', 'settings'];
+function NavMenu(sidebar) {
+  const links = ['dashboard', 'extentions', 'comments', 'posts', 'categories', 'media', 'pages', 'appearance', 'users', 'settings'];
 
 
   const [activeLink, setLink] = useState(false);
@@ -32,7 +32,7 @@ function NavMenu() {
           links.map((link, index) => (
             <Link click={clickLink} className={(activeLink || index === 0) ? 'nav-menu__item active' : 'nav-menu__item'} isActive={activeLink} key={`link-${index}`} to={genegatePath(link)}>
               <img className="nav-menu__icon" src={`img/icons/sidebar/${link}.svg`} alt={link} />
-              <span className="nav-menu__link">{link}</span>
+              <span style={sidebar ? { display: 'block' } : { display: 'none' }} className="nav-menu__link">{link}</span>
             </Link>
           ))}
       </ul>
