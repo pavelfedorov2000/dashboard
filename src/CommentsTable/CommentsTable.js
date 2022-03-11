@@ -207,12 +207,6 @@ function authorFormatter(cell, row, rowIndex, colIndex) {
   );
 }
 
-/* function statusFormatter(cell, row, rowIndex, colIndex) {
-  return (
-    <span className="status-label" style={{ backgroundColor: statusStyle[cell].backgroundColor, color: statusStyle[cell].color }}>{cell}</span>
-  );
-} */
-
 function dateFormatter(cell, row, rowIndex, colIndex) {
   return (
     <time dateTime={cell.split('.').reverse().join('-')}>{cell}</time>
@@ -221,16 +215,18 @@ function dateFormatter(cell, row, rowIndex, colIndex) {
 
 const { SearchBar } = Search;
 
-const statusSelectOptions = Object.keys(statusStyle).reduce((acc, status, index) => {
-  acc[index] = status;
+const statusSelectOptions = Object.keys(statusStyle).reduce((acc, status) => {
+  acc[status] = status;
   return acc;
 }, {});
-/* const statusSelectOptions = {
-  0: "Pending",
-  1: "Active",
-  2: "Trashed",
-}; */
-//statusSelectOptions[Object.keys(statusStyle).length] = 'Status';
+
+const dateSelectOptions = commentsTableData.reduce((acc, comment) => {
+  acc[comment.date] = comment.date;
+  return acc;
+}, {});
+
+//console.log(dateSelectOptions);
+
 //console.log(statusSelectOptions);
 
 const columns = [{
@@ -244,22 +240,27 @@ const columns = [{
   dataField: 'commentedIn',
   text: 'Commented In',
 }, {
+  dataField: 'date',
+  text: 'Date',
+  formatter: dateFormatter,
+  filter: selectFilter({
+    options: dateSelectOptions,
+    style: {
+      backgroundColor: '#fff'
+    },
+    className: 'table-select table-select--date',
+  })
+}, {
   dataField: 'status',
   text: 'Status',
   formatter: cell => <span className="status-label" style={{ backgroundColor: statusStyle[cell].backgroundColor, color: statusStyle[cell].color }}>{cell}</span>,
   filter: selectFilter({
     options: statusSelectOptions,
-    //withoutEmptyOption: true,
-    //defaultValue: Object.keys(statusStyle).length,
     style: {
       backgroundColor: '#fff'
     },
-    className: 'table-select',
+    className: 'table-select table-select--status',
   })
-}, {
-  dataField: 'date',
-  text: 'Date',
-  formatter: dateFormatter,
 }, /* {
   dataField: 'action',
   text: 'Action',
@@ -273,64 +274,28 @@ const columns = [{
   },
 } */];
 
-const handleDelete = (rowIndex) => {
+/* const handleDelete = (rowIndex) => {
   console.log(rowIndex);
-  //1 YourCellName
-};
+}; */
 
 const afterSearch = (newResult) => {
   console.log(newResult);
 };
-
-const rowStyle = { backgroundColor: '#fff' };
-
-const commentStatuses = [
-  {
-    status: 'Pending',
-    bgColor: 'rgba(255, 172, 50, 0.1)',
-    color: '#FFB648',
-  },
-  {
-    status: 'Answered',
-    bgColor: 'rgba(88, 135, 255, 0.1)',
-    color: '#5887FF',
-  },
-  {
-    status: 'Trashed',
-    bgColor: 'rgba(245, 91, 93, 0.1)',
-    color: '#F26464',
-  },
-];
-
-const datesFilter = ['All dates', 2021, 2020, 2019];
 
 function CommentsTable() {
 
   return (
     <section className="table comments__table">
 
-      <ToolkitProvider keyField='id' data={commentsTableData} columns={columns} selectRow={selectRow} rowStyle={rowStyle} search={{ afterSearch }}>
+      <ToolkitProvider keyField='id' data={commentsTableData} columns={columns} selectRow={selectRow} search={{ afterSearch }}>
         {
           props => (
-            <div>
-              <div className="comments__table-filters">
+            <div className="comments__table-inner">
+              <div className="comments__table-filters block">
                 <SearchBar {...props.searchProps} style={{ backgroundImage: 'url(img/icons/search.svg)' }} />
-                <div className="comments__table-selects">
-                  <select className="comments__table-select" style={{ backgroundImage: 'url(img/icons/drop.svg)' }}>
-                    {datesFilter.map(date => (
-                      <option>{date}</option>
-                    ))}
-                  </select>
-                  <select className="comments__table-select" style={{ backgroundImage: 'url(img/icons/drop.svg)' }}>
-                    <option>Status</option>
-                    {commentStatuses.map(status => (
-                      <option>{status.status}</option>
-                    ))}
-                  </select>
-                </div>
               </div>
 
-              <BootstrapTable {...props.baseProps} keyField='id' data={commentsTableData} columns={columns} selectRow={selectRow} rowStyle={rowStyle} headerClasses="table-head" pagination={paginationFactory({ alwaysShowAllBtns: true })} filter={filterFactory()} />
+              <BootstrapTable {...props.baseProps} keyField='id' data={commentsTableData} columns={columns} selectRow={selectRow} headerClasses="table-head" pagination={paginationFactory({ alwaysShowAllBtns: true })} filter={filterFactory()} />
             </div>
           )
         }

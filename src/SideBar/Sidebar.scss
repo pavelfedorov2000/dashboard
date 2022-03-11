@@ -4,21 +4,56 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
   width: vw(253);
-  height: 100vh;
-  background-color: $blue;
   padding: 20 * 100vh / 1150 vw(20);
   @extend %flex-col;
   overflow-y: auto;
   transition: .5s width;
+  height: 100vh;
+
+  @media(max-width: 1024px) {
+    width: 100%;
+    align-items: flex-start;
+    left: -100%;
+    padding: 30px 15px;
+    transition: .3s left;
+  }
+
+  &__close {
+    display: none;
+
+    @media(max-width: 1024px) {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 45px;
+      color: #fff;
+    }
+  }
 
   &.hide {
     width: vw(50);
+    padding-left: vw(5);
+    padding-right: vw(5);
+
+    @media(max-width: 1024px) {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      left: 0;
+    }
   }
 
   &__top {
     @extend %flex-row-center;
     padding: vw(20) 0;
     border-bottom: vw(1) solid rgba(#FFF, .1);
+
+    @media(max-width: 1024px) {
+      padding: 20px 0;
+      width: 100%;
+    }
   }
 }

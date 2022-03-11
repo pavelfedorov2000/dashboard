@@ -4,6 +4,24 @@
   >* {
     &:not(:last-child) {
       margin-bottom: vw(20);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__empty {
+    font-size: vw(24);
+    line-height: 30 / 24 * 100%;
+    font-weight: 600;
+
+    @media(max-width: 1024px) {
+      font-size: 24px;
+    }
+
+    @media(max-width: 500px) {
+      font-size: 16px;
     }
   }
 
@@ -13,13 +31,28 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: vw(20);
+
+    @media(max-width: 1024px) {
+      grid-gap: 20px;
+    }
+
+    @media(min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(min-width: 1025px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
 .add-extention {
   padding: vw(10) vw(20);
+
+  @media(max-width: 1024px) {
+    padding: 10px 20px;
+  }
 
   @media (any-hover: hover) {
     &:hover {
@@ -31,29 +64,39 @@
     background-size: vw(24) vw(24);
     background-position: 0 50%;
     background-repeat: no-repeat;
-    font-size: vw(16);
-    line-height: 24 / 16 * 100%;
+    @extend %text-16;
     padding-left: vw(28);
+
+    @media(max-width: 1024px) {
+      padding-left: 28px;
+      background-size: 24px;
+    }
   }
 }
 
 .extention-card {
   display: grid;
   grid-template-areas:
-    "img . . . . status"
-    "img . . . . ."
-    ". . . . . ."
-    "title title title title title title"
-    ". . . . . ."
-    "text text text text text text"
-    ". . . . . ."
-    ". . disable . delete delete"
+    ". . . . . . . ."
+    ". img . . . . status ."
+    ". img . . . . . ."
+    ". . . . . . . ."
+    ". title title title title title title ."
+    ". . . . . . . ."
+    ". text text text text text text ."
+    ". . . . . . . ."
+    ". . . disable . delete delete ."
+    ". . . . . . . ."
   ;
-  grid-template-columns: vw(58) 1fr vw(96) vw(5) vw(17) vw(79);
-  grid-template-rows: vw(22) vw(36) vw(20) max-content vw(10) max-content vw(10) vw(33);
-  background-color: #FFF;
+  grid-template-columns: vw(20) vw(58) 1fr vw(96) vw(5) vw(17) vw(79) vw(20);
+  grid-template-rows: vw(20) vw(22) vw(36) vw(20) max-content vw(10) max-content vw(10) vw(33) vw(20);
   border-radius: vw(10);
-  padding: vw(20);
+
+  @media(max-width: 1024px) {
+    grid-template-columns: 20px 58px 1fr 96px 5px 17px 79px 20px;
+    grid-template-rows: 20px 22px 36px 20px max-content 10px max-content 10px 33px 20px;
+    border-radius: vw(10);
+  }
 
   &__img {
     grid-area: img;
@@ -61,11 +104,21 @@
     border-radius: vw(6);
     @extend %flex-center;
 
+    @media(max-width: 1024px) {
+      border-radius: 6px;
+    }
+
     img {
       width: vw(43.5);
       height: vw(43.5);
       object-fit: cover;
       border-radius: vw(6);
+
+      @media(max-width: 1024px) {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+      }
     }
   }
 
@@ -78,6 +131,12 @@
     line-height: 20 / 12 * 100%;
     font-weight: 500;
 
+    @media(max-width: 1024px) {
+      font-size: 12px;
+      padding: 1px 15px;
+      border-radius: 100px;
+    }
+
     &::first-letter {
       text-transform: uppercase;
     }
@@ -85,7 +144,7 @@
 
   &__title {
     grid-area: title;
-    font-size: vw(16);
+    @extend %text-16;
     font-weight: 600;
     line-height: 20 / 16 * 100%;
   }
@@ -95,14 +154,17 @@
     padding-bottom: vw(10);
     border-bottom: 1px solid #EEE;
     color: #767676;
+
+    @media(max-width: 1024px) {
+      padding-bottom: 10px;
+    }
   }
 
   &__btn {
     border: 1px solid #EEEEEE;
     border-radius: vw(4);
     @extend %flex-center;
-    font-size: vw(16);
-    line-height: 24 / 16 * 100%;
+    @extend %text-16;
     transition: .3s all;
 
     &--disable {
@@ -145,7 +207,6 @@
   bottom: 0;
   left: 0;
   z-index: 200;
-  background-color: #F0F2FA;
   @extend %flex-center;
 }
 
@@ -154,6 +215,12 @@
   top: vw(50);
   right: vw(50);
   font-size: vw(50);
+
+  @media(max-width: 1024px) {
+    top: 30px;
+    right: 30px;
+    font-size: 50px;
+  }
 }
 
 .popup {
@@ -164,11 +231,25 @@
     text-align: center;
     letter-spacing: vw(1);
     margin-bottom: vw(30);
+
+    @media(max-width: 1024px) {
+      font-size: 24px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
   }
 
   &__form {
     width: vw(418);
     margin: 0 auto;
+
+    @media(max-width: 1024px) {
+      width: 418px;
+    }
+
+    @media(max-width: 500px) {
+      width: 100%;
+    }
   }
 }
 
@@ -178,9 +259,22 @@
   border-radius: vw(10);
   padding: vw(40);
 
+  @media(max-width: 1024px) {
+    padding: 40px;
+    border-radius: 10px;
+  }
+
+  @media(max-width: 500px) {
+    padding: 20px;
+  }
+
   &__item {
     display: block;
     margin-bottom: vw(15);
+
+    @media(max-width: 1024px) {
+      margin-bottom: 15px;
+    }
   }
 
   &__label {
@@ -188,6 +282,11 @@
     line-height: 34 / 14 * 100%;
     font-weight: 500;
     margin-bottom: vw(5);
+
+    @media(max-width: 1024px) {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
   }
 
   &__input {
@@ -199,6 +298,12 @@
     line-height: 34 / 14 * 100%;
     font-weight: 500;
 
+    @media(max-width: 1024px) {
+      font-size: 14px;
+      padding: 5px 16px;
+      border-radius: 8px;
+    }
+
     &::placeholder {
       color: #D6D7E3;
     }
@@ -207,8 +312,12 @@
   &__btn {
     width: 100%;
     padding: vw(10);
-    font-size: vw(16);
-    line-height: 24 / 16 * 100%;
+    @extend %text-16;
     margin-top: vw(15);
+
+    @media(max-width: 1024px) {
+      margin-bottom: 15px;
+      padding: 10px;
+    }
   }
 }

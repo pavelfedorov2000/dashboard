@@ -1,7 +1,7 @@
 import React from 'react';
 import './TopCategories.scss';
 
-function TopCategories(props) {
+function TopCategories() {
   const topCategories = [
     {
       "title": "Lifestyle",
@@ -68,7 +68,7 @@ function TopCategories(props) {
   }
 
   return (
-    <div className="top-categories dashboard__categories">
+    <div className="top-categories dashboard__categories block">
       <h2 className="top-categories__title">Top categories</h2>
       <div className="top-categories__nums">28 Categories, 1400 Posts</div>
       <ul className="top-categories__list">

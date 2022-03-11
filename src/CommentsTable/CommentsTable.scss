@@ -1,55 +1,50 @@
 @import '../base/vars';
 
 .comments {
+
   &__title {
     &:not(:last-child) {
       margin-bottom: vw(40);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 30px;
+      }
+
+      @media(max-width: 500px) {
+        margin-bottom: 20px;
+      }
     }
+  }
+
+  &__table-inner {
+    position: relative;
   }
 
   &__table-filters {
     @extend %flex-row;
     padding: vw(20);
-    background-color: #FFF;
     box-shadow: 0px 1px 0px #DADBE4;
+
+    @media(max-width: 1024px) {
+      padding: 20px;
+    }
+
+    @media(max-width: 767px) {
+      min-height: 140px;
+    }
   }
 
-  &__table-selects {
-    width: vw(185 * 2 + 20);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: vw(20);
-    display: none;
-  }
+  .react-bootstrap-table {
+    @media(max-width: 1024px) {
+      overflow-x: scroll;
+    }
 
-  &__table-select {
-    @extend %vertical-align;
-    width: vw(185);
-    height: vw(44);
-    padding: 0 vw(20);
-    border: vw(2) solid #EEE;
-    border-radius: vw(4);
-    font-size: vw(16);
-    line-height: 24 / 16 * 100%;
-    color: #9b9b9b;
-    background-size: vw(24) vw(24);
-    background-position: calc(100% - 20 * 100vw / 1440) 50%;
+    table {
+      @media(max-width: 1024px) {
+        width: 1000px;
+      }
+    }
   }
-}
-
-.table-select {
-  @extend %vertical-align;
-  width: vw(185);
-  height: vw(44);
-  background-color: #fff;
-  padding: 0 vw(20);
-  border: vw(2) solid #EEE;
-  border-radius: vw(4);
-  font-size: vw(16);
-  line-height: 24 / 16 * 100%;
-  color: #9b9b9b;
-  background-size: vw(24) vw(24);
-  background-position: calc(100% - 20 * 100vw / 1440) 50%;
 }
 
 .sr-only {
@@ -61,7 +56,6 @@
   width: vw(266);
   height: vw(44);
   background-position: calc(100% - 16 * 100vw / 1440) 50%;
-  background-color: #EFF0F6;
   background-size: vw(24) vw(24);
   background-repeat: no-repeat;
   padding-left: vw(16);
@@ -70,13 +64,86 @@
   line-height: 34 / 14 * 100%;
   border-radius: vw(8);
 
+  @media(max-width: 1024px) {
+    width: 266px;
+    height: 44px;
+    background-size: 24px;
+    padding-left: 15px;
+    padding-right: 55px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
   &::placeholder {
     color: #D6D7E3;
   }
 }
 
+input.form-control {
+  @media(max-width: 767px) {
+    display: none;
+  }
+}
+
+.table-select {
+  position: absolute;
+  top: vw(20);
+  @extend %vertical-align;
+  width: vw(185);
+  height: vw(44);
+  padding: 0 vw(20);
+  border: vw(2) solid #EEE;
+  border-radius: vw(4);
+  font-size: vw(16);
+  line-height: 24 / 16 * 100%;
+  color: #9b9b9b;
+
+  @media(max-width: 1024px) {
+    width: 185px;
+    height: 44px;
+    padding: 0 20px;
+    top: 20px;
+    font-size: 16px;
+    border: 2px solid #EEE;
+  }
+
+  @media(max-width: 767px) {
+    width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  &--status {
+    right: vw(36);
+
+    @media(max-width: 1024px) {
+      right: 36px;
+    }
+
+    @media(max-width: 767px) {
+      right: 20px;
+    }
+  }
+
+  &--date {
+    right: vw(36 + 20 + 185);
+
+    @media(max-width: 1024px) {
+      right: 36px + 20px + 185px;
+    }
+
+    @media(max-width: 767px) {
+      right: 20px;
+      top: 80px;
+    }
+  }
+}
+
 .react-bootstrap-table-pagination {
   padding-top: vw(20);
+
+  @media(max-width: 1024px) {
+    padding-top: 20px;
+  }
 }
 
 .react-bs-table-sizePerPage-dropdown {
@@ -97,6 +164,12 @@
   height: vw(32);
   margin: 0 vw(2);
 
+  @media(max-width: 1024px) {
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+  }
+
   &[title="first page"],
   &[title="last page"] {
     display: none;
@@ -109,6 +182,12 @@
     background-color: #2F49D1;
     border-radius: vw(4);
 
+    @media(max-width: 1024px) {
+      width: 45px;
+      height: 45px;
+      border-radius: 4px;
+    }
+
     &.disabled {
       background-color: rgba(47, 73, 209, 0.1);
     }
@@ -120,10 +199,18 @@
 
   &[title="next page"] {
     margin-left: vw(14);
+
+    @media(max-width: 1024px) {
+      margin-left: 14px;
+    }
   }
 
   &[title="previous page"] {
     margin-right: vw(14);
+
+    @media(max-width: 1024px) {
+      margin-right: 14px;
+    }
   }
 }
 
@@ -136,5 +223,12 @@
   line-height: 150%;
   text-align: center;
   letter-spacing: 0.2px;
-  color: #000;
+
+  @media(max-width: 1024px) {
+    font-size: 16px;
+  }
+
+  @media(max-width: 500px) {
+    font-size: 14px;
+  }
 }

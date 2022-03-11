@@ -5,12 +5,19 @@
   text-align: center;
 
   &__img {
-    width: vw(644);
-    height: vw(350);
     object-fit: cover;
+
+    @media(min-width: 1025px) {
+      width: vw(644);
+      height: vw(350);
+    }
 
     &:not(:last-child) {
       margin-bottom: vw(90);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 90px;
+      }
     }
   }
 
@@ -20,8 +27,17 @@
     font-weight: 700;
     letter-spacing: vw(1);
 
+    @media(max-width: 1024px) {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
     &:not(:last-child) {
       margin-bottom: vw(20);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -32,13 +48,21 @@
 
     &:not(:last-child) {
       margin-bottom: vw(30);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 30px;
+      }
     }
   }
 
   &__btn {
     padding: vw(10) vw(45);
     border-radius: vw(4);
-    font-size: vw(16);
-    line-height: 24 / 16 * 100%;
+    @extend %text-16;
+
+    @media(max-width: 1024px) {
+      padding: 10px 45px;
+      border-radius: 4px;
+    }
   }
 }

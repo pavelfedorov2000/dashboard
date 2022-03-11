@@ -64,21 +64,37 @@ $blue: #0061F7;
   font-size: vw(10);
   line-height: 120%;
   letter-spacing: -0.4px;
+
+  @media(max-width: 1024px) {
+    font-size: 10px;
+  }
 }
 
 %text-12 {
   font-size: vw(12);
   line-height: 14 / 12 * 100%;
   letter-spacing: -0.4px;
+
+  @media(max-width: 1024px) {
+    font-size: 12px;
+  }
 }
 
 %text-16 {
   font-size: vw(16);
   line-height: 19 / 16 * 100%;
   letter-spacing: -0.4px;
+
+  @media(max-width: 1024px) {
+    font-size: 16px;
+  }
 }
 
 %text-18 {
   font-size: vw(18);
   line-height: 22 / 18 * 100%;
+
+  @media(max-width: 1024px) {
+    font-size: 18px;
+  }
 }

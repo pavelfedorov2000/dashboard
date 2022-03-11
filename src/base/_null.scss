@@ -22,11 +22,9 @@ body {
   font-weight: 400;
   font-size: vw(14);
   line-height: 17 / 14 * 100%;
-  background-color: #F0F2FA;
-  color: #171717;
 
-  &._lock {
-    overflow-y: hidden;
+  @media(max-width: 1024px) {
+    font-size: 14px;
   }
 }
 
@@ -77,12 +75,6 @@ select {
   outline: none;
   padding: 0;
   cursor: pointer;
-}
-
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-repeat: no-repeat;
 }
 
 input {

@@ -2,8 +2,19 @@
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-gap: vw(20);
+
+  @media(max-width: 1024px) {
+    grid-gap: 20px;
+  }
+
+  @media(min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(min-width: 1025px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .stat-card {
@@ -13,16 +24,35 @@
   padding: vw(38) vw(19) vw(24);
   display: flex;
 
+  @media(max-width: 1024px) {
+    border-radius: 10px;
+    padding: 38px 19px 24px;
+  }
+
+  @media(max-width: 500px) {
+    padding: 15px;
+  }
+
   &__img {
     width: vw(60);
     height: vw(60);
     border-radius: 50%;
     flex-shrink: 0;
     margin-right: vw(9);
+
+    @media(max-width: 1024px) {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+    }
   }
 
   &__content {
     padding-top: vw(9);
+
+    @media(max-width: 1024px) {
+      padding-top: 9px;
+    }
   }
 
   &__num {
@@ -31,6 +61,10 @@
 
     &:not(:last-child) {
       margin-bottom: vw(4);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 4px;
+      }
     }
   }
 
@@ -40,6 +74,10 @@
 
     &:not(:last-child) {
       margin-bottom: vw(6);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 6px;
+      }
     }
   }
 
@@ -49,6 +87,10 @@
     >* {
       &:not(:last-child) {
         margin-right: vw(10);
+
+        @media(max-width: 1024px) {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -57,6 +99,11 @@
     padding-left: vw(21);
     background-size: vw(16) vw(16);
     background-repeat: no-repeat;
+
+    @media(max-width: 1024px) {
+      padding-left: 21px;
+      background-size: 16px;
+    }
   }
 
   &__month {

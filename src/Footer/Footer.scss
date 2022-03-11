@@ -9,8 +9,19 @@
   font-weight: 500;
   color: #B9B9B9;
 
+  @media(max-width: 1024px) {
+    padding: 15px;
+    font-size: 13px;
+    line-height: 17px;
+  }
+
   &__inner {
     @extend %flex-row;
+
+    @media(max-width: 767px) {
+      flex-direction: column-reverse;
+      row-gap: 20px;
+    }
   }
 
   &__list {
@@ -18,5 +29,9 @@
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     grid-gap: vw(20);
+
+    @media(max-width: 1024px) {
+      grid-gap: 15px;
+    }
   }
 }

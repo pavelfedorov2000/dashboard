@@ -5,13 +5,26 @@
   border-radius: vw(10);
   padding: vw(20);
 
+  @media(max-width: 1024px) {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
   &__title {
     font-size: vw(16);
     line-height: 19 / 16 * 100%;
     letter-spacing: -0.4px;
 
+    @media(max-width: 1024px) {
+      font-size: 16px;
+    }
+
     &:not(:last-child) {
       margin-bottom: vw(4);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 4px;
+      }
     }
   }
 
@@ -22,8 +35,16 @@
     letter-spacing: -0.4px;
     color: #B9B9B9;
 
+    @media(max-width: 1024px) {
+      font-size: 14px;
+    }
+
     &:not(:last-child) {
       margin-bottom: vw(10);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -32,25 +53,45 @@
   @extend %flex-row;
   padding: vw(10) 0;
 
+  @media(max-width: 1024px) {
+    padding: 10px 0;
+  }
+
   &:not(:last-child) {
     border-bottom: 1px solid #EEEEEE;
   }
 
   &__title {
     @extend %text-12;
+
+    @media(max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &__subtitle {
     @extend %text-12;
     color: #B9B9B9;
+
+    @media(max-width: 1024px) {
+      font-size: 14px;
+    }
   }
 
   &__left {
     padding-right: vw(10);
 
+    @media(max-width: 1024px) {
+      padding-right: 10px;
+    }
+
     >* {
       &:not(:last-child) {
         margin-bottom: vw(4);
+
+        @media(max-width: 1024px) {
+          margin-bottom: 4px;
+        }
       }
     }
   }
@@ -62,6 +103,10 @@
     >* {
       &:not(:last-child) {
         margin-bottom: vw(2);
+
+        @media(max-width: 1024px) {
+          margin-bottom: 2px;
+        }
       }
     }
   }
@@ -69,6 +114,10 @@
   &__k {
     @extend %text-10;
     font-weight: 600;
+
+    @media(max-width: 1024px) {
+      font-size: 12px;
+    }
   }
 
   &__plus {
@@ -76,5 +125,11 @@
     @extend %text-10;
     font-weight: 500;
     border-radius: vw(3);
+
+    @media(max-width: 1024px) {
+      padding: 2px 4px;
+      font-size: 12px;
+      border-radius: 3px;
+    }
   }
 }

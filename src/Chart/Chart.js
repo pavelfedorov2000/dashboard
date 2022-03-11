@@ -1,9 +1,9 @@
 import React from 'react';
 import './Chart.scss';
 
-function Chart(props) {
+function Chart() {
   return (
-    <section className="dashboard__chart chart">
+    <section className="dashboard__chart chart block">
       <div className="chart__info">
         <div className="chart__descr">
           <h2 className="chart__title">Visitor statistics</h2>
@@ -20,7 +20,9 @@ function Chart(props) {
           </div>
         </div>
       </div>
-      <img className="chart__graph" src="img/chart.svg" alt="chart" />
+      <div className="chart__graph">
+        <img src="img/chart.svg" alt="chart" />
+      </div>
     </section>
   );
 }

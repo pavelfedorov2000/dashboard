@@ -1,7 +1,7 @@
 import React from 'react';
 import './Stats.scss';
 
-function Stats(props) {
+function Stats() {
   const stats = [
     {
       "title": "visits",
@@ -49,7 +49,7 @@ function Stats(props) {
   return (
     <div className="stats dashboard__stats">
       {stats.map(stat => (
-        <div className="stat-card">
+        <div className="stat-card block">
           <img className="stat-card__img" src={`img/icons/${stat.title}.svg`} alt={stat.title} />
           <div className="stat-card__content">
             <div className="stat-card__num">{stat.num}</div>

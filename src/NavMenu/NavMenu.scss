@@ -5,6 +5,11 @@
   margin-top: 20 * 100vh / 1150;
   margin-bottom: auto;
 
+  @media(max-width: 1024px) {
+    margin-top: 20px;
+    padding-bottom: 30px;
+  }
+
   &__item {
     padding: 13.5 * 100vh / 1150 0;
     @extend %vertical-align;
@@ -13,8 +18,14 @@
     transition: 0.3s color;
     color: rgba(#fff, .6);
 
-    @media (any-hover: hover) {
-      &:hover {}
+    @media(max-width: 1024px) {
+      justify-content: flex-start !important;
+      font-size: 24px;
+      padding: 10px 0;
+    }
+
+    @media(max-width: 500px) {
+      font-size: 16px;
     }
 
     &.active {
@@ -26,11 +37,21 @@
     width: vw(24);
     height: vw(24);
     flex-shrink: 0;
-    margin-right: vw(10);
+
+    @media(max-width: 1024px) {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   &__link {
     font-weight: 500;
+    margin-left: vw(10);
+
+    @media(max-width: 1024px) {
+      display: block !important;
+      margin-left: 10px;
+    }
 
     &::first-letter {
       text-transform: uppercase;

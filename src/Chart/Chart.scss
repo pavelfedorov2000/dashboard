@@ -6,9 +6,23 @@
   border-radius: vw(10);
   padding: vw(20) vw(25) vw(20) vw(20);
 
+  @media(max-width: 1024px) {
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: scroll;
+  }
+
+  @media(max-width: 500px) {
+    padding: 15px;
+  }
+
   >* {
     &:not(:last-child) {
       margin-bottom: vw(25);
+
+      @media(max-width: 1024px) {
+        margin-bottom: 25px;
+      }
     }
   }
 
@@ -34,7 +48,18 @@
   }
 
   &__graph {
-    width: 100%;
+    @media(min-width: 1025px) {
+      width: 100%;
+      height: vw(253);
+    }
+
+    @media(max-width: 1024px) {
+      width: 850px;
+    }
+
+    img {
+      @extend %cover;
+    }
   }
 }
 
@@ -43,10 +68,22 @@
   grid-template-columns: repeat(2, max-content);
   grid-gap: vw(24);
 
+  @media(max-width: 1024px) {
+    grid-gap: 24px;
+  }
+
+  @media(max-width: 500px) {
+    grid-gap: 15px;
+  }
+
   &__item {
 
     position: relative;
     padding-left: vw(16);
+
+    @media(max-width: 1024px) {
+      padding-left: 16px;
+    }
 
     &::before {
       content: '';
@@ -56,11 +93,21 @@
       width: vw(8);
       height: vw(8);
       border-radius: 50%;
+
+      @media(max-width: 1024px) {
+        top: 4px;
+        width: 8px;
+        height: 8px;
+      }
     }
 
     >* {
       &:not(:last-child) {
         margin-bottom: vw(8);
+
+        @media(max-width: 1024px) {
+          margin-bottom: 8px;
+        }
       }
     }
 
@@ -83,10 +130,22 @@
     font-weight: 500;
     letter-spacing: 0.3px;
     color: #B9B9B9;
+
+    @media(max-width: 1024px) {
+      font-size: 12px;
+    }
+
+    @media(max-width: 500px) {
+      font-size: 10px;
+    }
   }
 
   &__item-num {
     @extend %text-16;
     font-weight: 600;
+
+    @media(max-width: 500px) {
+      font-size: 12px;
+    }
   }
 }

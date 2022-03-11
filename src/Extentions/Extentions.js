@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { useState } from 'react';
 import './Extentions.scss';
 
@@ -7,53 +7,62 @@ function Extentions() {
   const extentionsData = [
     {
       name: "Jetpack security",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '01',
       status: 'active',
     },
     {
       name: "Superb Blocks",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '02',
       status: 'active',
     },
     {
       name: "Preferred Languages",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '03',
       status: 'active',
     },
     {
       name: "Yoast SEO",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '04',
       status: 'active',
     },
     {
       name: "Elementor Website Builder",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '05',
       status: 'active',
     },
     {
       name: "Slider",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '06',
       status: 'active',
     },
     {
       name: "Jetpack security",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '07',
       status: 'active',
     },
     {
       name: "GiveWP – Donation Plugin",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '08',
       status: 'active',
     },
     {
       name: "Atomic Blocks – Gutenberg Blocks",
+      text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
       img: '09',
       status: 'active',
     },
   ];
 
   const [extentions, setExtentions] = useState(extentionsData);
-  console.log(extentions);
+  //console.log(extentions);
 
   function handleDeleteClick(index) {
     const removeExtention = extentions.filter((_, extentionIndex) => {
@@ -88,7 +97,7 @@ function Extentions() {
       setExtentions([
         ...extentions,
         {
-          img: `0${Math.floor(Math.random() * 10)}`,
+          img: `0${Math.floor(Math.random() * 9) + 1}`,
           name: extentionName,
           text: extentionText,
           status: 'active',
@@ -123,15 +132,16 @@ function Extentions() {
           <span style={{ backgroundImage: 'url(img/icons/plus.svg)' }}>Add new</span>
         </button>
       </div>
+      <div style={(extentions.length === 0) ? { display: 'block' } : { display: 'none' }} className="extentions__empty">There are no extentions added! Click Add new to add new extention</div>
       <div className="extentions__cards">
         {extentions.map((extention, index) => (
-          <div className="extention-card" key={`extention-${index}`}>
+          <div className="extention-card block" key={`extention-${index}`}>
             <div className="extention-card__img">
               <img src={`img/icons/extentions/${extention.img}.png`} alt="extention icon" />
             </div>
             <span className="extention-card__status" style={extention.status === 'active' ? { backgroundColor: 'rgba(88, 135, 255, 0.1)', color: '#5887FF' } : { backgroundColor: 'rgba(255, 172, 50, 0.1)', color: '#FFB648' }}>{extention.status}</span>
             <h5 className="extention-card__title">{extention.name}</h5>
-            <p className="extention-card__text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+            <p className="extention-card__text">{extention.text}</p>
             <button className={extention.status === 'active' ? 'extention-card__btn extention-card__btn--disable' : 'extention-card__btn extention-card__btn--enable'} type="button" onClick={extention.status === 'active' ? e => handleDisableClick(e, index) : e => handleEnableClick(e, index)}>{extention.status === 'active' ? 'Disable' : 'Activate'}</button>
             <button className="extention-card__btn extention-card__btn--delete" type="button" onClick={() => handleDeleteClick(index)}>Delete</button>
           </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import './DashboardTable.scss';
 import BootstrapTable from 'react-bootstrap-table-next';
 
 const dashboardTableData = [
@@ -116,7 +115,7 @@ function DashboardTable() {
 
   return (
     <section className="table dashboard__table">
-      <BootstrapTable keyField='id' data={dashboardTableData} columns={columns} selectRow={selectRow} headerClasses="dashboard-table__head" rowStyle={rowStyle} />
+      <BootstrapTable className="block" keyField='id' data={dashboardTableData} columns={columns} selectRow={selectRow} headerClasses="table-head" rowStyle={rowStyle} />
     </section>
   );
 }

@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import './HeaderSearch.scss';
+import React from "react";
 
 function HeaderSearch(props) {
   return (

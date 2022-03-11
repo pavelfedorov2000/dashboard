@@ -1,22 +1,26 @@
 import React, {
   Component
 } from "react";
-import { useState } from 'react';
 import HeaderSearch from '../HeaderSearch/HeaderSearch';
 import './AppHeader.scss';
 
-function AppHeader() {
+function AppHeader({ switchTheme, openBurger }) {
 
   return (
     <header className="header">
       <div className="header__inner">
+        <button className="burger-btn" type="button" onClick={openBurger}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <HeaderSearch />
         <div className="header__actions actions-header">
           <select className="lang">
             <option>en</option>
             <option>ru</option>
           </select>
-          <button className="actions-header__item theme-toggler" type="button">
+          <button className="actions-header__item theme-toggler" type="button" onClick={switchTheme}>
             <img src="img/icons/theme.svg" alt="theme" />
           </button>
           <button className="actions-header__item notifications" type="button">
