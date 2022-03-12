@@ -1,221 +1,221 @@
 @import '../base/vars';
 
 .dashboard {
-  &__title {
-    &:not(:last-child) {
-      margin-bottom: vw(20);
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: vw(20);
 
-      @media(max-width: 1024px) {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  &__grid {
-    display: grid;
-    grid-gap: vw(20);
-
-    @media(max-width: 1024px) {
-      grid-gap: 20px;
+            @media (max-width: 1024px) {
+                margin-bottom: 20px;
+            }
+        }
     }
 
-    @media(min-width: 1025px) {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: max-content vw(256) vw(94) max-content;
-      grid-template-areas: "stats stats stats stats"
-        "chart chart chart customers"
-        "chart chart chart categories"
-        "table table table categories"
-      ;
-    }
-  }
+    &__grid {
+        display: grid;
+        grid-gap: vw(20);
 
-  &__stats {
-    @media(min-width: 1025px) {
-      grid-area: stats;
-    }
-  }
+        @media (max-width: 1024px) {
+            grid-gap: 20px;
+        }
 
-  &__chart {
-    @media(min-width: 1025px) {
-      grid-area: chart;
-    }
-  }
-
-  &__customers {
-    @media(min-width: 1025px) {
-      grid-area: categories;
-    }
-  }
-
-  &__categories {
-    @media(min-width: 1025px) {
-      grid-area: categories;
-    }
-  }
-
-  &__table {
-    @media(min-width: 1025px) {
-      grid-area: table;
+        @media (min-width: 1025px) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: max-content vw(256) vw(94) max-content;
+            grid-template-areas:
+                'stats stats stats stats'
+                'chart chart chart customers'
+                'chart chart chart categories'
+                'table table table categories';
+        }
     }
 
-    @media(max-width: 1024px) {
-      overflow-x: scroll;
+    &__stats {
+        @media (min-width: 1025px) {
+            grid-area: stats;
+        }
     }
 
-    .react-bootstrap-table {
-      @media(max-width: 1024px) {
-        width: 850px;
-      }
+    &__chart {
+        @media (min-width: 1025px) {
+            grid-area: chart;
+        }
     }
-  }
+
+    &__customers {
+        @media (min-width: 1025px) {
+            grid-area: customers;
+        }
+    }
+
+    &__categories {
+        @media (min-width: 1025px) {
+            grid-area: categories;
+        }
+    }
+
+    &__table {
+        @media (min-width: 1025px) {
+            grid-area: table;
+        }
+
+        @media (max-width: 1024px) {
+            overflow-x: scroll;
+        }
+
+        .react-bootstrap-table {
+            @media (max-width: 1024px) {
+                width: 850px;
+            }
+        }
+    }
 }
 
 .table {
-  table {
-    border-spacing: 0;
+    table {
+        border-spacing: 0;
 
-    td {
-      padding: vw(8.5) 0;
-      @extend %text-12;
-      font-weight: 500;
-      letter-spacing: -0.3px;
-      color: #767676;
+        td {
+            padding: vw(8.5) 0;
+            @extend %text-12;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            color: #767676;
 
-      @media(max-width: 1024px) {
-        padding: 8.5px 0;
-      }
+            @media (max-width: 1024px) {
+                padding: 8.5px 0;
+            }
 
-      &:first-child {
-        padding-left: vw(20);
-        padding-right: vw(20);
-        text-align: center;
+            &:first-child {
+                padding-left: vw(20);
+                padding-right: vw(20);
+                text-align: center;
 
-        @media(max-width: 1024px) {
-          padding-left: 20px;
-          padding-right: 20px;
+                @media (max-width: 1024px) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
         }
-      }
-    }
 
-    input {
-      &[type="checkbox"] {
-        margin: 0;
-        width: vw(14);
-        height: vw(14);
+        input {
+            &[type='checkbox'] {
+                margin: 0;
+                width: vw(14);
+                height: vw(14);
 
-        @media(max-width: 1024px) {
-          width: 14px;
-          height: 14px;
+                @media (max-width: 1024px) {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 .dashboard table {
-  &:nth-child(2) {
-    width: vw(71);
+    &:nth-child(2) {
+        width: vw(71);
 
-    @media(max-width: 1024px) {
-      width: 71px;
+        @media (max-width: 1024px) {
+            width: 71px;
+        }
     }
-  }
 }
 
 .comments {
-  table {
-    th {
-      &:last-child {
-        text-align: center;
-      }
-    }
-
-    td {
-      &:last-child {
-        @extend %flex-center;
-        padding-left: vw(36);
-        padding-right: vw(36);
-
-        @media(max-width: 1024px) {
-          padding-left: 36px;
-          padding-right: 36px;
+    table {
+        th {
+            &:last-child {
+                text-align: center;
+            }
         }
-      }
+
+        td {
+            &:last-child {
+                @extend %flex-center;
+                padding-left: vw(36);
+                padding-right: vw(36);
+
+                @media (max-width: 1024px) {
+                    padding-left: 36px;
+                    padding-right: 36px;
+                }
+            }
+        }
     }
-  }
 }
 
 .table-head {
-  background-color: #EFF0F6 !important;
-  box-shadow: 0px 1px 0px #DADBE4;
+    background-color: #eff0f6 !important;
+    box-shadow: 0px 1px 0px #dadbe4;
 
-  th {
-    text-align: left;
-    padding: vw(14) 0;
-    font-size: vw(14);
-    font-weight: 500;
-    letter-spacing: -0.3px;
-    color: #767676;
+    th {
+        text-align: left;
+        padding: vw(14) 0;
+        font-size: vw(14);
+        font-weight: 500;
+        letter-spacing: -0.3px;
+        color: #767676;
 
-    @media(max-width: 1024px) {
-      padding: 14px 0;
-      font-size: 14px;
+        @media (max-width: 1024px) {
+            padding: 14px 0;
+            font-size: 14px;
+        }
+
+        &:first-child {
+            padding-left: vw(20);
+            padding-right: vw(20);
+            text-align: center;
+
+            @media (max-width: 1024px) {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
     }
-
-    &:first-child {
-      padding-left: vw(20);
-      padding-right: vw(20);
-      text-align: center;
-
-      @media(max-width: 1024px) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-    }
-  }
 }
 
 .react-bootstrap-table table {
-  width: 100%;
+    width: 100%;
 }
 
 .author {
-  @extend %vertical-align;
+    @extend %vertical-align;
 
-  &__avatar {
-    width: vw(30);
-    height: vw(30);
-    object-fit: cover;
-    flex-shrink: 0;
-    margin-right: vw(7.5);
+    &__avatar {
+        width: vw(30);
+        height: vw(30);
+        object-fit: cover;
+        flex-shrink: 0;
+        margin-right: vw(7.5);
 
-    @media(max-width: 1024px) {
-      width: 30px;
-      height: 30px;
-      margin-right: 7.5px;
+        @media (max-width: 1024px) {
+            width: 30px;
+            height: 30px;
+            margin-right: 7.5px;
+        }
     }
-  }
 }
 
 .status-label {
-  @extend %flex-center;
-  width: vw(79);
-  height: vw(22);
-  text-align: center;
-  padding: vw(1) vw(19);
-  font-size: vw(12);
-  line-height: 20 / 12 * 100%;
-  font-weight: 500;
-  border-radius: vw(100);
+    @extend %flex-center;
+    width: vw(79);
+    height: vw(22);
+    text-align: center;
+    padding: vw(1) vw(19);
+    font-size: vw(12);
+    line-height: 20 / 12 * 100%;
+    font-weight: 500;
+    border-radius: vw(100);
 
-  @media(max-width: 1024px) {
-    width: 79px;
-    height: 22px;
-    padding: 1px 19px;
-    font-size: 12px;
-    border-radius: 100px;
-  }
+    @media (max-width: 1024px) {
+        width: 79px;
+        height: 22px;
+        padding: 1px 19px;
+        font-size: 12px;
+        border-radius: 100px;
+    }
 }
 
 /* .btn-trash {
