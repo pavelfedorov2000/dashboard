@@ -11,7 +11,7 @@ export const darkTheme = {
     popupColor: "#171717",
     closePopup: "#fff",
     tableSelect: "#222235 !important",
-    tr: "#222235",
+    tr: "#222235 !important",
     pageLink: "#fff",
     burgerBtn: "#fff",
 }
@@ -27,7 +27,7 @@ export const lightTheme = {
     popupColor: "#171717",
     closePopup: "#171717",
     tableSelect: "#fff !important",
-    tr: "#fff",
+    tr: "#fff !important",
     pageLink: "#000",
     burgerBtn: "#171717",
 }

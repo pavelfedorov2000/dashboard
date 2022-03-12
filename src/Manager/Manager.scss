@@ -1,70 +1,70 @@
 @import '../base/vars';
 
 .manager {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: vw(10);
-  padding: vw(10);
-  display: grid;
-  grid-template-columns: vw(48) max-content;
-  grid-template-rows: repeat(2, max-content);
-  grid-gap: 0 vw(8);
-  margin-top: auto;
-  transition: .3s all;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: vw(10);
+    padding: vw(10);
+    display: grid;
+    grid-template-columns: vw(48) max-content;
+    grid-template-rows: repeat(2, max-content);
+    grid-gap: 0 vw(8);
+    margin-top: auto;
+    transition: 0.3s all;
 
-  @media(max-width: 1024px) {
-    grid-template-columns: 48px max-content;
-    grid-gap: 0 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1) !important;
-  }
-
-  &--small {
-    grid-template-columns: vw(25) max-content;
-    grid-gap: 0;
-    padding: 0;
-    background-color: transparent;
-
-    @media(max-width: 1024px) {
-      grid-template-columns: 48px max-content;
-      grid-gap: 0 10px;
-      padding: 10px 20px;
+    @media (max-width: 1024px) {
+        grid-template-columns: 48px max-content;
+        grid-gap: 0 10px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1) !important;
     }
-  }
 
-  &__img {
-    grid-row: span 2;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
+    &--small {
+        display: block;
+        padding: 0;
+        background-color: transparent;
 
-    @media(max-width: 1024px) {
-      grid-column: span 1 !important;
+        @media (max-width: 1024px) {
+            display: grid;
+            grid-template-columns: 48px max-content;
+            grid-gap: 0 10px;
+            padding: 10px 20px;
+        }
     }
-  }
 
-  &__name {
-    line-height: 20 / 14 * 100%;
-    letter-spacing: 0.75px;
-    font-weight: 600;
-    color: #fff;
+    &__img {
+        grid-row: span 2;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
 
-    @media(max-width: 1024px) {
-      display: block !important;
+        @media (max-width: 1024px) {
+            grid-column: span 1 !important;
+        }
     }
-  }
 
-  &__position {
-    font-weight: 500;
-    font-size: vw(10);
-    line-height: 15 / 10 * 100%;
-    letter-spacing: vw(0.859533);
-    color: rgba(255, 255, 255, 0.5);
-    grid-column: 2 / 3;
+    &__name {
+        line-height: 20 / 14 * 100%;
+        letter-spacing: 0.75px;
+        font-weight: 600;
+        color: #fff;
 
-    @media(max-width: 1024px) {
-      font-size: 12px;
-      display: block !important;
+        @media (max-width: 1024px) {
+            display: block !important;
+        }
     }
-  }
+
+    &__position {
+        font-weight: 500;
+        font-size: vw(10);
+        line-height: 15 / 10 * 100%;
+        letter-spacing: vw(0.859533);
+        color: rgba(255, 255, 255, 0.5);
+        grid-column: 2 / 3;
+
+        @media (max-width: 1024px) {
+            font-size: 12px;
+            display: block !important;
+        }
+    }
 }
